@@ -8,7 +8,7 @@ import route from './route'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(VueRouter)
-const router = new VueRouter(route)
+const router = new VueRouter({routes:route})
 
 new Vue({
   render: h => h(App),

@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <el-menu mode="horizontal">
+    <el-menu class="nav" mode="horizontal">
       <el-menu-item index="1">
-        <router-link to="/big-file-uploader">大文件上传</router-link>
+        <router-link to="/big-file-upload">大文件上传</router-link>
       </el-menu-item>
     </el-menu>
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -36,6 +36,9 @@ export default {
   margin-top: 60px;
   a {
     text-decoration: none;
+  }
+  .nav {
+    margin-bottom: 24px;
   }
 }
 </style>
