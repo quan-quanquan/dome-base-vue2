@@ -27,8 +27,18 @@ export default {
     }
   },
   methods: {
-    requset() {
-
+    requset(data) {
+      return new Promise((r, j) => {
+        const xhr = new XMLHttpRequest()
+        xhr.upload.onprogress = this.onProgress.bind(this)
+        xhr.open('post', this.uploadUrl)
+        xhr.send(data)
+        xhr.onload = e => {
+          resolve({
+            data: e.target.response
+          })
+        }
+      })
     },
     handleFile(file) {
       console.log(file)
@@ -56,6 +66,7 @@ export default {
       const requestList = this.sliceList.map(slice => {
         const formData = new FormData()
         formData.append('slice', slice)
+        formData.append('count', this.sliceList.length)
         return formData
       }).map(data => {
         this.requset(data)
@@ -81,6 +92,9 @@ export default {
         }
       }
       _request()
+    },
+    onProgress() {
+
     }
   }
 }
