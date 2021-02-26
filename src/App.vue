@@ -4,6 +4,9 @@
       <el-menu-item index="1">
         <router-link to="/big-file-upload">大文件上传</router-link>
       </el-menu-item>
+      <el-menu-item index="2">
+        <router-link to="/directives">自定义指令</router-link>
+      </el-menu-item>
     </el-menu>
     <router-view></router-view>
   </div>
